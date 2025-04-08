@@ -1,22 +1,13 @@
 import React, { useState } from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Hero: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
-  const handleViewCV = () => {
-    // Open CV in a new tab for viewing
-    window.open('/path-to-your-cv.pdf', '_blank');
-  };
-
-  const handleDownloadCV = () => {
-    // Trigger file download
-    const link = document.createElement('a');
-    link.href = '/path-to-your-cv.pdf';
-    link.download = 'Sikhar_Panthi_CV.pdf'; // Name of the downloaded file
-    link.click();
+  const handleCVClick = () => {
+    setShowModal(true);
   };
 
   return (
@@ -28,11 +19,33 @@ const Hero: React.FC = () => {
         <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-primary/10 blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-60 h-60 rounded-full bg-primary/20 blur-3xl"></div>
       </div>
+
+      {/* CV Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+          <div className="bg-white text-black p-6 rounded-xl shadow-xl w-full max-w-md relative">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-3 right-3 text-gray-600 hover:text-black"
+            >
+              <X size={20} />
+            </button>
+            <h2 className="text-xl font-semibold mb-2">📄 CV Coming Soon</h2>
+            <p className="text-sm text-gray-700">
+              I’m currently updating my CV. A fresh and polished version will be available here in a couple of days. Stay tuned!
+            </p>
+          </div>
+        </div>
+      )}
       
       <div className="container mx-auto text-center relative z-10">
         <div className="flex justify-center mb-6 animate-fade-in">
           <Avatar className="w-44 h-44 border-4 border-primary">
-            <AvatarImage  className="scale-125 object-cover translate-y-4"  src="/lovable-uploads/558032c7-3861-4e84-8b85-97525ef093fa.png" alt="Shikhar Pokhrel" />
+            <AvatarImage 
+              className="scale-125 object-cover translate-y-4"
+              src="/lovable-uploads/558032c7-3861-4e84-8b85-97525ef093fa.png"
+              alt="Shikhar Pokhrel" 
+            />
             <AvatarFallback>SP</AvatarFallback>
           </Avatar>
         </div>
@@ -44,10 +57,10 @@ const Hero: React.FC = () => {
           A passionate web developer specializing in HTML, CSS, C, JavaScript and Java.
         </p>
         <div className="flex justify-center animate-fade-in" style={{animationDelay: '0.1s'}}>
-          <Button size="lg" className="bg-primary hover:bg-primary/80 text-white" onClick={handleViewCV}>
+          <Button size="lg" className="bg-primary hover:bg-primary/80 text-white" onClick={handleCVClick}>
             View CV
           </Button>
-          <Button size="lg" className="bg-primary hover:bg-primary/80 text-white ml-4" onClick={handleDownloadCV}>
+          <Button size="lg" className="bg-primary hover:bg-primary/80 text-white ml-4" onClick={handleCVClick}>
             Download CV
           </Button>
         </div>

@@ -4,21 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sikhar Panthi - Portfolio</title>
-    <meta name="description" content="Portfolio website of Sikhar Pokhrel, a web developer specializing in HTML, CSS, JavaScript, and Java." />
-    <meta name="author" content="Shikhar Pokhrel" />
+    <meta name="description" content="Portfolio website of Sikhar Panthi, a web developer specializing in HTML, CSS, JavaScript, and Java." />
+    <meta name="author" content="Sikhar Panthi" />
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Sikhar Panthi - Portfolio" />
     <meta property="og:description" content="Web developer specializing in HTML, CSS, JavaScript, and Java." />
     <meta property="og:type" content="website" />
-    
-    <!-- Preconnect for Google Fonts -->
+
+    <!-- Theme & Mobile Meta -->
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Preconnect & Preload Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" media="all" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" /></noscript>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div style="text-align:center; padding:2rem; font-family: Poppins, sans-serif;">
+        
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
