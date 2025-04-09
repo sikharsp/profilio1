@@ -20,6 +20,6 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: 'build', // Specify the output directory for production build
+    outDir: ''dist', // Specify the output directory for production build
   },
 }));
